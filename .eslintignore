@@ -1,0 +1,9 @@
+*.*
+!*.js
+!*.json
+!*.jsx
+!*.ts
+!*.tsx
+
+node_modules/
+build/
