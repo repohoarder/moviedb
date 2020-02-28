@@ -1,6 +1,9 @@
 # 🍿 moviedb
 
-_moviedb_ is an application that uses [The Movie Database (TMDb)](https://www.themoviedb.org/) and is built with React.
+![dependencies](https://badgen.net/david/dep/matthias-hampel/moviedb)
+![dependencies](https://badgen.net/david/dev/matthias-hampel/moviedb)
+
+_moviedb_ is an application that uses [the Movie Database (TMDb)](https://www.themoviedb.org/) and is built with React.
 The application was created for demo purposes and shows some [React](https://reactjs.org/), [React Redux](https://react-redux.js.org/) and [TypeScript](https://www.typescriptlang.org/) concepts.
 
 To retrieve data from the Movie Database, an API key must be generated first. To register for an API key, click the [API link](https://www.themoviedb.org/settings/api) from within your account settings page.
