@@ -11,7 +11,12 @@ Access to the movie database is free of charge. More information about authentic
 
 ## Before you start
 
-Once you obtained an API key, make sure you replace `{{apiToken}}` in the file `src/redux/movies/actions.ts` with your API key.
+To make [environment variables permanent](https://create-react-app.dev/docs/adding-custom-environment-variables#adding-development-environment-variables-in-env), they are defined in `.env` files.
+Create a new `.env.local` file for you development environment and add the following values:
+
+| Variable Name                | Description                 | Example                                                                                            |
+| ---------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------- |
+| `REACT_APP_MOVIE_DB_API_KEY` | Your Movie Database API Key | `ewogICJtZXNzYWdlIjogIkkgaG9wZSB0aGF0IEkgY291bGQgaGVscCB5b3UhIFBsZWFzZSBsZWF2ZSBhIHN0YXIgOikiCn0=` |
 
 ## Available Scripts
 

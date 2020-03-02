@@ -6,7 +6,7 @@ export function fetchMovies() {
     const res = await fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc', {
       method: 'GET',
       headers: {
-        Authorization: 'Bearer {{apiToken}}'
+        Authorization: `Bearer ${process.env.REACT_APP_MOVIE_DB_API_KEY}`
       }
     });
 
