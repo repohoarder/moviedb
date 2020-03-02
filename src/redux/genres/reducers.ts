@@ -1,14 +1,14 @@
 import { Genre } from '../../types/genre';
 import { GenreState } from '../state';
 
-export const LOAD_GENRES_ACTION = 'LOAD_GENRES_ACTION';
+export const FETCH_GENRES = 'FETCH_GENRES';
 
-export interface LoadGenresAction {
-  type: typeof LOAD_GENRES_ACTION;
+export interface FetchGenresAction {
+  type: typeof FETCH_GENRES;
   genres: Genre[];
 }
 
-export type GenresActionTypes = LoadGenresAction;
+export type GenresActionTypes = FetchGenresAction;
 
 const initialState: GenreState = {
   genres: [],
@@ -19,10 +19,10 @@ export default function(state = initialState, action: GenresActionTypes): GenreS
   const { type } = action;
 
   switch (type) {
-    case LOAD_GENRES_ACTION:
+    case FETCH_GENRES:
       return {
         ...state,
-        genres: (action as LoadGenresAction).genres,
+        genres: (action as FetchGenresAction).genres,
         genresLoaded: true
       };
 

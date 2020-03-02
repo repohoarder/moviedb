@@ -1,10 +1,20 @@
-import { LOAD_GENRES_ACTION, LoadGenresAction } from './reducers';
+import { Action, Dispatch } from 'redux';
+import { FETCH_GENRES, FetchGenresAction } from './reducers';
 
-import { Genre } from '../../types/genre';
+export function fetchGenres() {
+  return async function(dispatch: Dispatch<FetchGenresAction>): Promise<Action> {
+    const res = await fetch('https://api.themoviedb.org/3/genre/movie/list', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_MOVIE_DB_API_KEY}`
+      }
+    });
 
-export function loadGenres(genres: Genre[]): LoadGenresAction {
-  return {
-    type: LOAD_GENRES_ACTION,
-    genres
+    const genres = await res.json();
+
+    return dispatch({
+      type: FETCH_GENRES,
+      genres: genres.results
+    });
   };
 }

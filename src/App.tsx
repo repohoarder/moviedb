@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Movie } from './types/movie';
 import MovieCard from './components/MovieCard';
 import { RootState } from './redux/state';
+import { fetchGenres } from './redux/genres/actions';
 import { fetchMovies } from './redux/movies/actions';
 import styled from 'styled-components';
 
@@ -14,6 +15,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchMovies());
+    dispatch(fetchGenres());
   }, [dispatch]);
 
   const movies = useSelector((state: RootState) => state.movies.movies);
