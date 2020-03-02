@@ -14,7 +14,7 @@ export function fetchGenres() {
 
     return dispatch({
       type: FETCH_GENRES,
-      genres: genres.results
+      genres: genres.genres
     });
   };
 }
