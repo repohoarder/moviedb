@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Movie } from './types/movie';
 import MovieCard from './components/MovieCard';
 import { RootState } from './redux/state';
-import styled from 'styled-components';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -24,20 +23,12 @@ const App: React.FC = () => {
       {movies && (
         <div>
           {movies.map((movie: Movie) => (
-            <MovieGrid key={movie.id}>
-              <MovieCard movie={movie} />
-            </MovieGrid>
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       )}
     </div>
   );
 };
-
-const MovieGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-column-gap: 16px;
-`;
 
 export default App;

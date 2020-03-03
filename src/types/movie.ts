@@ -9,4 +9,5 @@ export interface Movie {
   vote_count: number;
   popularity: number;
   release_aate: string;
+  genre_ids: number[];
 }
