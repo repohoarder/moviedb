@@ -5,8 +5,9 @@ import { fetchGenres, fetchMovies } from './redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Movie } from './types/movie';
-import MovieCard from './components/MovieCard';
+import Poster from './components/Poster';
 import { RootState } from './redux/state';
+import styled from 'styled-components';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,20 @@ const App: React.FC = () => {
   return (
     <div>
       {movies && (
-        <div>
-          {movies.map((movie: Movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+        <MovieWall>
+          {movies.map((movie: Pick<Movie, 'id' | 'title' | 'poster_path'>) => (
+            <Poster key={movie.id} path={movie.poster_path} width="w185" title={movie.title} />
           ))}
-        </div>
+        </MovieWall>
       )}
     </div>
   );
 };
+
+const MovieWall = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  grid-gap: 24px;
+`;
 
 export default App;
