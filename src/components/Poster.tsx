@@ -8,7 +8,7 @@ interface PosterProps {
 
 const Poster: React.FC<PosterProps> = ({ path, width, title }: PosterProps) => (
   <div>
-    <img src={`https://image.tmdb.org/t/p/${width}/${path}`} alt={title} />
+    <img src={`https://image.tmdb.org/t/p/${width}/${path}`} title={title} alt={title} />
   </div>
 );
 
