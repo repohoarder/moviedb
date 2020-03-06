@@ -7,3 +7,8 @@
   from = "/api/movies"
   to = "/.netlify/functions/movies"
   status = 301
+
+[[redirects]]
+  from = "/api/genres"
+  to = "/.netlify/functions/genres"
+  status = 301  
