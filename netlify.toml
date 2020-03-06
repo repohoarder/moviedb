@@ -2,3 +2,8 @@
   command = "yarn build"
   functions = "functions-build"
   publish = "build"
+
+[[redirects]]
+  from = "/api/movies"
+  to = "/.netlify/functions/movies"
+  status = 301
