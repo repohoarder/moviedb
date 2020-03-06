@@ -3,18 +3,17 @@ import { FETCH_MOVIES, FetchMoviesAction } from './reducers';
 
 export function fetchMovies() {
   return async function(dispatch: Dispatch<FetchMoviesAction>): Promise<Action> {
-    const res = await fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc', {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_MOVIE_DB_API_KEY}`
-      }
+    const res = await fetch('https://react-cinema.netlify.com/api/movies', {
+      method: 'GET'
     });
 
     const movies = await res.json();
 
+    console.log(movies);
+
     return dispatch({
       type: FETCH_MOVIES,
-      movies: movies.results
+      movies
     });
   };
 }
