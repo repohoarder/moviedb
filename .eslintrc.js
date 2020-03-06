@@ -28,5 +28,14 @@ module.exports = {
       version: 'detect'
     }
   },
-  rules: {}
+  rules: {},
+  overrides: [
+    {
+      files: ['*.js', '*.jsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 0,
+        '@typescript-eslint/no-unused-vars': 0
+      }
+    }
+  ]
 };
